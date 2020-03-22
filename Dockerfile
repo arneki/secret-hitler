@@ -3,5 +3,5 @@ FROM node:lts
 WORKDIR /app
 COPY . ./
 RUN yarn
-
-CMD yarn dev
+RUN yarn run build
+ENTRYPOINT node bin/dev.js

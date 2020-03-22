@@ -4,8 +4,8 @@ const http = require('http');
 
 const options = {
 	method: 'POST',
-	hostname: 'localhost',
-	port: '8080',
+	hostname: process.env.APP_HOST,
+	port: process.env.APP_PORT,
 	path: '/account/signup',
 	headers: {
 		'content-type': 'application/json; charset=UTF-8'

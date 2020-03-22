@@ -13,6 +13,15 @@ services:
     links:
       - mongo
       - redis
+  create-users:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    links:
+      - secrethitler
+    entrypoint: bash -c 'while !</dev/tcp/secrethitler/8080; do sleep 1; done; yarn create-accounts'
   mongo:
     env_file:
       - .env

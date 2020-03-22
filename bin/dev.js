@@ -3,7 +3,7 @@
 const http = require('http');
 const express = require('express');
 const port = (() => {
-	const val = process.env.PORT || '8080';
+	const val = process.env.APP_PORT || '8080';
 	const port = parseInt(val, 10);
 
 	if (isNaN(port)) {
