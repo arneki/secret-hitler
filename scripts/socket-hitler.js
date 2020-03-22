@@ -31,7 +31,7 @@
 	};
 
 	let SafeWebSocket = window.WebSocket;
-	let py = new SafeWebSocket('ws://localhost:3222/');
+	let py = new SafeWebSocket(`ws://${process.env.APP_HOST}:3222/`);
 	py.onopen = function(event) {
 		console.log('Backend Connection Oppened');
 		py.send('00["connection", {"status":"ok"}]');

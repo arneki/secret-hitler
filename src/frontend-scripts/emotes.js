@@ -32,7 +32,7 @@ export function processEmotes(input, isMod, allEmotes) {
 	const formatedMsg = [];
 
 	message.forEach((word, index) => {
-		const validSiteURL = /^http[s]?:\/\/(secrethitler\.io|localhost:8080|github\.com\/cozuya\/secret-hitler)\/([a-zA-Z0-9#?=&\/\._]*)$/i;
+		const validSiteURL = /^http[s]?:\/\/(secrethitler\.io|secrethitler\.staging\.ruv\.is|localhost:8080|github\.com\/cozuya\/secret-hitler)\/([a-zA-Z0-9#?=&\/\._]*)$/i;
 		if (mapping[word]) {
 			formatedMsg.push(
 				<span key={index} data-tooltip={word} data-inverted>
